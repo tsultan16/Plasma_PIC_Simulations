@@ -1,0 +1,35 @@
+# 2 beam instability: 
+# For this simulation, we have two cold electron beams drifting in opposite directions. A neutralizing uniform positive background is present.
+
+# Requirement for wave growth: k*v0/wp < SQRT(2) . For wp =1.0, v0 = 1.0, k < SQRT(2). Since k = 1,2,3... => the k = 1 mode
+needs to be excited to get wave growth.
+
+
+Grid: nx = 32, L=2*pi, 
+Time step size: dt=0.01*2*pi/wp_e (i.e. 1% of electron plasma oscillation period)
+Particles: N=4096
+Interpolation = 2 (momentum conserving)
+
+Species 1:  Perturbations: Mode (k0) = 1, x1 = 0.001, v1 = 0.0, theta1 = 0.0, Drift: v0 = 1.0
+Species 2:  Perturbations: Mode (k0)  = 0, x1 = 0.0, v1 = 0.0, theta1 = 0.0,  Drift: v0 = -1.0
+
+
+#Diagnostics:
+
+1) Mode Plots: k=1 mode undergoes exponential growth up until t ~ 250*dt = 0.25*plasma osc. period.
+   i.e. this is where transition from linear to non-linear regime occurs because amplitudes of perturbations become too large.
+
+   In linear regime, ESEk(k=1)~ Exp(2*w*t). Log plot (slope) shows that 2*w ~ 0.95 => w ~ 0.453 ~ 0.45*wp_e (consistent with theoretical w_imaginary)   
+   
+2) Beyond linear regime, harmonics of the original k0=1 are excited (due to non-linear coupling of these waves), i.e. k= n*k0 (n=2,3,4...) ,etc. These harmonics also undergo a short phase of exponential growth, with growth
+   rates 'n' times that of k0. e.g. k=2 has growth rate  w ~ 0.9 = 2*0.45  and k=4 has growth rate  w ~ 1.8 = 4*0.45  
+
+3) Energy Plots: Non-linear electric field growth eventually saturates. The maximum electrostatic field energy reached is ~ 30% of maximum initial KE. 
+
+4) Field Plots: By the end of the linear regime, electrons form bunches. Two peaks can be seen in the charge density. 
+
+5) Phase Space Plot: The beams at v0 = +1 and -1 are perturbed. The perturbations grow and they eventually wrap around and form a vortex that persists. This is a signature
+  of particles being trapped.
+
+6) Velocity Distribution plots: Initially we have two peaks at v = -1 and v = +1. The peaks broaden and seem to approach a Maxwellian i.e. the beams 
+   thermalize due to scattering of particles by large (long wavelength) scale electric fields.    

@@ -1,0 +1,7 @@
+###########3D EM PIC CODE#############
+
+TO-DO LIST:
+
+MPI:
+
+

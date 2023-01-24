@@ -1,0 +1,10 @@
+#1d Neutral Plasma with 2 species: electrons and ions
+
+Mass ratio: mi/me = 4
+Grid: nx = 32, L=100
+Particles: N=128
+Interpolation = 3 (energy conserving)
+Electron Perturbations: Mode = 2, x1 = 0.45, v1 = 0.0, theta1 = 0.0
+Ion Perturbations: Mode = 0, x1 = 0.0, v1 = 0.0, theta1 = 0.0
+
+ 

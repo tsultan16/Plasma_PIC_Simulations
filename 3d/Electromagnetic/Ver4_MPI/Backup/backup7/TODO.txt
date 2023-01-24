@@ -1,0 +1,13 @@
+###########3D EM PIC CODE#############
+
+TO-DO LIST:
+
+1) Add in capability for "restarts" from saved data from prior runs
+
+
+MPI:
+
+
+2) Add field separate field buffer arrays for each boundary. 
+   Use non-blocking collectives (igather, iscatter) for field data 'halo' exchange (see 'Using Advanced
+   Mpi' pg. 19)

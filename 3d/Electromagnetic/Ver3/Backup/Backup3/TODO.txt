@@ -1,0 +1,8 @@
+###########2D EM PIC CODE#############
+
+TO-DO LIST:
+
+
+1) Add radiation absorbing boundary conditions (i.e. radiation outflow)
+2) Parallelize with MPI domain decomposition
+3) Extend to 3D (main challenge is going to be programming the 3d current deposition routine...)

@@ -1,0 +1,18 @@
+###########3D EM PIC CODE#############
+
+TO-DO LIST:
+
+
+Radiation boundary:
+
+1) Unpack the super cryptic 1d array boundary upadates and do them with nested do loops in all 3
+dimensions
+
+MPI:
+
+1) Add particle exchange with "corner" ranks for 2d domain decomposition
+2) Reuse bparticle_x,y,z, arrays as the particle buffers. 
+   Use non blocking barrier and for particle excnahnge (see 'Using Advanced MPI' pg. 27)
+3) Add separate field buffer arrays for each boundary. 
+   Use non-blocking collectives (igather, iscatter) for field data 'halo' exchange (see 'Using Advanced
+   Mpi' pg. 19)
